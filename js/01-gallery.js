@@ -48,8 +48,10 @@ function handleClick(event) {
 
     function closeModal (event){
         if (event.code === 'Escape' || event.key === 'Escape') {
-         instance.close();
-       }
+            instance.close();
+            document.removeEventListener("keydown", closeModal);
+        }
+        console.log(event.code);
     }  
     document.addEventListener("keydown", closeModal);   
 }
